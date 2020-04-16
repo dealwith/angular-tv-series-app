@@ -7,7 +7,7 @@ import { TvTableModule } from './tv-table/tv-table.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

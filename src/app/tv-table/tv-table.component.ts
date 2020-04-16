@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TV_SERIES } from './data';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 export interface PeriodicElement {
   name: string;
@@ -13,10 +15,14 @@ export interface PeriodicElement {
   templateUrl: './tv-table.component.html',
   styleUrls: ['./tv-table.component.css'],
 })
+export class TvTableComponent implements OnInit {
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-export class TvTableComponent {
-  constructor() {}
+  dataSource = new MatTableDataSource<any>(TV_SERIES);
+
+  ngOnInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 
   displayedColumns: string[] = ['name', 'season', 'network', 'premiere'];
-  dataSource = TV_SERIES;
 }
