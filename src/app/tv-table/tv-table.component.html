@@ -4,32 +4,32 @@
   </mat-form-field>
 </div>
 
-<div class="example-container mat-elevation-z8">
+<div class="example-container mat-elevation-z8 tv-table-container">
 
-  <mat-table [dataSource]="dataSource" matSort>
+  <mat-table [dataSource]="dataSource" class="tv-table" matSort matSortStart="asc">
 
     <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="tv-table__head-cell"> Name </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="season">
-      <mat-header-cell *matHeaderCellDef mat-header-cell> Season </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.season}}% </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-header-cell class="tv-table__head-cell"> Season </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.season}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="network">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Network </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="tv-table__head-cell"> Network </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.network}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="premiere">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Premiere </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="tv-table__head-cell"> Premiere </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.premiere}} </mat-cell>
     </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    <mat-header-row *matHeaderRowDef="displayedColumns" class='tv-table__head-row'></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" class='tv-table__body-row'>
     </mat-row>
   </mat-table>
 

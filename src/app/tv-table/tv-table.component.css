@@ -1,0 +1,23 @@
+.tv-table-container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.tv-table {
+}
+
+.tv-table__head-row {
+  background-color: #673ab7;
+}
+
+.tv-table__head-cell {
+  color: #fff;
+  font-size: 16px;
+}
+
+.tv-table__body-row {
+  border-bottom: none;
+}
+
+.tv-table__item {
+}
