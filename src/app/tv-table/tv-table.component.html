@@ -1,34 +1,37 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div class="example-header">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
 
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+<div class="example-container mat-elevation-z8">
 
-  <!-- Position Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name</th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-  </ng-container>
+  <mat-table [dataSource]="dataSource" matSort>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="season">
-    <th mat-header-cell *matHeaderCellDef> Season </th>
-    <td mat-cell *matCellDef="let element"> {{element.season}} </td>
-  </ng-container>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+    </ng-container>
 
-  <!-- Weight Column -->
-  <ng-container matColumnDef="network">
-    <th mat-header-cell *matHeaderCellDef> Network</th>
-    <td mat-cell *matCellDef="let element"> {{element.network}} </td>
-  </ng-container>
+    <ng-container matColumnDef="season">
+      <mat-header-cell *matHeaderCellDef mat-header-cell> Season </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.season}}% </mat-cell>
+    </ng-container>
 
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="premiere">
-    <th mat-header-cell *matHeaderCellDef> Premiere </th>
-    <td mat-cell *matCellDef="let element"> {{element.premiere}} </td>
-  </ng-container>
+    <ng-container matColumnDef="network">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Network </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.network}} </mat-cell>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <ng-container matColumnDef="premiere">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Premiere </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.premiere}} </mat-cell>
+    </ng-container>
 
-<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

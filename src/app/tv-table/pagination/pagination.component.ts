@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-pagination',
@@ -7,4 +6,5 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./pagination.component.css'],
 })
 export class PaginationComponent {
+
 }
