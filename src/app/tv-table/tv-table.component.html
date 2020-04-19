@@ -9,23 +9,28 @@
   <mat-table [dataSource]="dataSource" class="tv-table" matSort matSortStart="asc">
 
     <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header class="tv-table__head-cell"> Name </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="tv-table__head-cell tv-table__head-cell--name"> Name </mat-header-cell>
+      <mat-cell *matCellDef="let row" class="tv-table__body-cell tv-table__body-cell--name-container"> 
+        <span class="tv-table__body-cell--name">{{row.name}}</span> 
+        <div class="tv-table__genre-container">
+          <span *ngFor="let genre of row.genres" class="tv-table__genre genre--{{genre}}">{{genre}}</span>
+        </div>
+      </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="season">
       <mat-header-cell *matHeaderCellDef mat-header-cell class="tv-table__head-cell"> Season </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.season}} </mat-cell>
+      <mat-cell *matCellDef="let row" class="tv-table__body-cell"> {{row.season}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="network">
       <mat-header-cell *matHeaderCellDef mat-sort-header class="tv-table__head-cell"> Network </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.network}} </mat-cell>
+      <mat-cell *matCellDef="let row" class="tv-table__body-cell"> {{row.network}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="premiere">
       <mat-header-cell *matHeaderCellDef mat-sort-header class="tv-table__head-cell"> Premiere </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.premiere}} </mat-cell>
+      <mat-cell *matCellDef="let row" class="tv-table__body-cell"> {{row.premiere}} </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns" class='tv-table__head-row'></mat-header-row>
@@ -33,5 +38,5 @@
     </mat-row>
   </mat-table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25]" class="tv-table__paginator"></mat-paginator>
 </div>

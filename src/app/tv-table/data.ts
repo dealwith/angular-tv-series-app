@@ -1,7 +1,7 @@
 export const TV_SERIES = [
   {
     name: 'The Terror',
-    genres: ['horror', 'drama'],
+    genres: ['horror', 'drama', 'dark comedy'],
     season: 3,
     network: ['AMC'],
     premiere: '20.10.2019',

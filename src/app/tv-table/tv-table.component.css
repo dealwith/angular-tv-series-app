@@ -3,21 +3,77 @@
   width: 80%;
 }
 
-.tv-table {
-}
-
 .tv-table__head-row {
   background-color: #673ab7;
 }
 
 .tv-table__head-cell {
-  color: #fff;
+  color: white;
   font-size: 16px;
+}
+
+.tv-table__head-cell:not(.tv-table__head-cell--name) {
+  justify-content: center;
 }
 
 .tv-table__body-row {
   border-bottom: none;
+  padding: 10px 0;
 }
 
-.tv-table__item {
+.tv-table__body-cell {
+  font-size: 16px;
+}
+
+.tv-table__body-cell:not(.tv-table__body-cell--name) {
+  justify-content: center;
+}
+
+.tv-table__body-cell--name-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+
+.tv-table__body-cell--name {
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.tv-table__genre-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 10px;
+}
+
+.tv-table__genre-container > .tv-table__genre:not(:last-child) {
+  margin-right: 8px;
+}
+
+.tv-table__genre {
+  padding: 2px 10px;
+  border-radius: 15px;
+  color: white;
+  white-space: nowrap;
+  margin-bottom: 5px;
+}
+
+.genre--horror {
+  background-color: black;
+}
+
+.genre--drama {
+  background-color: violet;
+}
+
+.genre--dark {
+  background-color: grey;
+}
+
+.genre--tradegy {
+  background-color: red;
+}
+
+.genre--crime {
+  background-color: #9c27b0;
 }

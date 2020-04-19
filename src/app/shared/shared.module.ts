@@ -7,15 +7,13 @@ import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [],
-  imports: [
-    MatSortModule
-  ],
+  imports: [MatSortModule, MatPaginatorModule],
   exports: [
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSortModule
+    MatSortModule,
   ],
 })
 export class SharedModule {}
